@@ -1,0 +1,10 @@
+/* Google FOnts */
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua&family=Inter&display=swap');
+
+
+/* Header */
+header{
+    font-family: 'Inknut Antiqua', serif
+}
+/* font-family: 'Inknut Antiqua', serif;
+font-family: 'Inter', sans-serif; */
