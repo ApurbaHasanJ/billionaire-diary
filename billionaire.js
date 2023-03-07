@@ -1,8 +1,8 @@
 let fetchData = [];
 let currentDataLimit = 15;
 
-const loadBillionaire = (clickForBill) => {
-    const url = `https://forbes400.onrender.com/api/forbes400/${clickForBill}`;
+const loadBillionaire = (searchText) => {
+    const url = `https://forbes400.onrender.com/api/forbes400/${searchText}`;
     fetch(url)
         .then(res => res.json())
         .then(data => {
@@ -68,5 +68,18 @@ const displayBillionaires = (billionaires) => {
     })
     
 }
+
+
+// get search items
+const searchBillionaires = () =>{
+    const searchText = document.getElementById('search-field').value;
+    console.log(searchText);
+    loadBillionaire(searchText);
+  }
+
+  const searchBtn = document.getElementById('search-btn');
+searchBtn.addEventListener('click', searchBillionaires());
+
+  
 
 // loadBillionaire('getAllBillionaires')
