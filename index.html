@@ -12,42 +12,79 @@
   <link rel="stylesheet" href="style.css">
 
 </head>
-<body class="max-w-screen-2xl mx-auto">
-  <header class="flex">
-    <nav class="w-3/12 bg-slate-800 py-6 px-4 text-center">
+<body class="max-w-screen-2xl mx-auto flex">
+  <header class="w-3/12">
+    <nav class=" bg-slate-800 h-full py-6 px-4 text-center">
         <h1 class="font-extrabold text-2xl  mb-9 text-white">BILLIONAIRE <div class="font-medium tracking-widest text-slate-300">DIARY</div></h1>
 
         <ul class="  text-slate-800  font-bold text-xl mb-7">
-            <li class="bg-white grid justify-center items-center h-16 py-1 px-5 mb-5">Add a User<br>
+            <li class="bg-white hover:bg-slate-200 grid justify-center items-center h-16 py-1 px-5 mb-5">Add a User<br>
                 <span class="font-light">(Randomly)</span>
             </li>
-            <li class="bg-white grid justify-center items-center h-16 py-1 px-5 mb-5">Double Money</li>
-            <li class="bg-white grid justify-center items-center h-16 py-1 px-5 mb-5">Short By Rank<br>
+            <li class="bg-white hover:bg-slate-200 grid justify-center items-center h-16 py-1 px-5 mb-5">Double Money</li>
+            <li class="bg-white hover:bg-slate-200 grid justify-center items-center h-16 py-1 px-5 mb-5">Short By Rank<br>
                 <span class="font-light">(Descending)</span>
             </li>
-            <li class="bg-white grid justify-center items-center h-16 py-1 px-5">Calculate Entire Wealth</li>
+            <li class="bg-white hover:bg-slate-200 grid justify-center items-center h-16 py-1 px-5">Calculate Entire Wealth</li>
         </ul>
 
         <hr class="w-8/12 mx-auto">
 
         <ul class="text-slate-800  font-bold text-xl mt-7">
-            <li class="bg-white grid justify-center items-center h-16 py-1 px-5 mb-5">Show All Billionaires</li>
-            <li class="bg-white grid justify-center items-center h-16 py-1 px-5 mb-5">Richest by industry<br>
+            <li onclick="loadBillionaire('getAllBillionaires')" class="bg-white hover:bg-slate-200 grid justify-center items-center h-16 py-1 px-5 mb-5">Show All Billionaires</li>
+            <li class="bg-white hover:bg-slate-200 grid justify-center items-center h-16 py-1 px-5 mb-5">Richest by industry<br>
                 <span class="font-light">(Technology)</span>
             </li>
-            <li class="bg-white grid justify-center items-center h-16 py-1 px-5">Richest by states<br>
+            <li class="bg-white hover:bg-slate-200 grid justify-center items-center h-16 py-1 px-5">Richest by states<br>
                 <span class="font-light">(Texas)</span>
             </li>
         </ul>
     </nav>
-
-    <!-- Search bar -->
-    <div class="w-9/12 p-1 h-16 flex justify-center items-center bg-slate-400 ">
-        <input class=" ml-5 rounded-l-lg p-3" type="text" placeholder="Search">
-        <button class="bg-slate-900 rounded-r-lg text-white p-3">Search</button>
-    </div>
   </header>
 
+  <main class="w-9/12">
+    <!-- Search bar -->
+  <section class=" p-1 h-24 flex justify-center items-center caret-caret-500 border-b-2">
+    <input id="search-field" class=" ml-5 rounded-l-lg p-4 text-slate-700 bg-slate-200 font1" type="text" placeholder="Search">
+    <button class="bg-slate-900 hover:bg-slate-600 rounded-r-lg text-white p-4">Search</button>
+    <img class="w-20 ml-auto" src="images/logo/logo1.png" alt="">
+  </section>
+
+  <!-- Billionaire section -->
+  <section  class="mt-5 ">
+    <div id="billionaire-container">
+        
+
+        <!-- All billionaire are here -->
+
+    </div>
+    
+    </div>
+    
+  </section>
+
+  <!-- Spinner Section -->
+  <!-- <section class="mx-auto">
+    <button type="button" class="bg-indigo-500 ..." disabled>
+      <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
+         ...
+      </svg>
+      Processing...
+    </button>
+  </section>-->
+
+  <!-- Load more btn -->
+  <section>
+    <div>
+        <button id="load-more-btn" class="bg-slate-900 hover:bg-slate-600 w-1/4 mx-auto rounded-r-lg text-white p-4">Load More</button>
+    </div>
+  </section>
   
+  </main>
+
+  
+
+  <!-- Billionaire Js FIle -->
+  <script src="billionaire.js"></script>
 </body>
 </html>
