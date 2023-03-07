@@ -1,18 +1,31 @@
+let fetchData = [];
+let currentDataLimit = 15;
+
 const loadBillionaire = (clickForBill) => {
     const url = `https://forbes400.onrender.com/api/forbes400/${clickForBill}`;
     fetch(url)
         .then(res => res.json())
-        .then(data => displayBillionaires(data));
-        // console.log(data)
+        .then(data => {
+            fetchData = data
+            displayBillionaires(fetchData.slice(0, currentDataLimit))});
+        
 }
 
-
-let displayedBillionaires = 0;
-const billionairesPerLoad = 15;
 
 const displayBillionaires = (billionaires) => {
     console.log(billionaires)
     const billionairesContainer = document.getElementById('billionaire-container');
+
+
+    const loadMoreBtn = document.getElementById('load-more-btn')
+    loadMoreBtn.addEventListener('click', () => {
+        currentDataLimit += 15
+        displayBillionaires(fetchData.slice(0, currentDataLimit))
+        if(currentDataLimit >= fetchData.length){
+            loadMoreBtn.classList.add('hidden')
+        }
+    })
+
     billionairesContainer.innerHTML = `
         <div class="bg-slate-100 h-24 flex items-center"> 
             <h1 class="text-center text-3xl font-extrabold mx-auto font1">
@@ -52,7 +65,7 @@ const displayBillionaires = (billionaires) => {
         `;
         billionairesGrid.appendChild(billionairesDiv);
     })
-    const loadMoreBtn = document.getElementById('load-more-btn')
+    
 }
 
-loadBillionaire('getAllBillionaires')
+// loadBillionaire('getAllBillionaires')

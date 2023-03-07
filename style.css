@@ -9,3 +9,10 @@
 .font2{
     font-family: 'Inter', sans-serif;
 }
+
+nav{
+    height: 830px;
+}
+.section-scroll-bar{
+    height: 640px;
+}
