@@ -12,6 +12,7 @@ const loadBillionaire = (clickForBill) => {
 }
 
 
+// Show All Billionaires on click or on load
 const displayBillionaires = (billionaires) => {
     console.log(billionaires)
     const billionairesContainer = document.getElementById('billionaire-container');
@@ -47,13 +48,13 @@ const displayBillionaires = (billionaires) => {
             <h1 class="text-center font1 text-xl mb-3">${billionaire.person.name}</h1>
             <div class="flex items-center justify-between">
                 <div class="pr-2">
-                    <img class="w-32" src="${billionaire.person.squareImage}" alt="">
+                    <img class="w-32" src="${billionaire.person.squareImage}" alt="No Img Found">
                     <strong>Source: <span class="text-slate-50 font-normal">${billionaire.source}</span></strong>
                 </div>
                 <div class="border-l-2 border-white-500 pl-2">
                     <p class="font-semibold">Citizenship: <span class="text-slate-50 font-normal">${billionaire.countryOfCitizenship}</span> </p>
-                    <p class="font-semibold">State: <span class="text-slate-50 font-normal">${billionaire.state}</span></p>
-                    <p class="font-semibold">City: <span class="text-slate-50 font-normal">${billionaire.city}</span> </p>
+                    <p class="font-semibold">State: <span class="text-slate-50 font-normal">${billionaire.state ? billionaire.state : 'No Data Found'}</span></p>
+                    <p class="font-semibold">City: <span class="text-slate-50 font-normal">${billionaire.city ? billionaire.city : 'No Data Found'}</span> </p>
                     
 
                     <p class="font-semibold">Total Shares: <span class="text-slate-50 font-normal">${billionaire.financialAssets && billionaire.financialAssets[0] ? billionaire.financialAssets[0].numberOfShares : "No Data Found"}</span> </p>

@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="style.css">
 
 </head>
-<body class="max-w-screen-2xl mx-auto flex">
+<body onload="loadBillionaire('female')" class="max-w-screen-2xl mx-auto flex">
   <header class="w-3/12">
     <nav id="" class=" scroll-bar bg-slate-800 py-6 px-4 text-center">
         <h1 class="font-extrabold text-2xl  mb-9 text-white">BILLIONAIRE <div class="font-medium tracking-widest text-slate-300">DIARY</div></h1>
@@ -25,17 +25,17 @@
             <li class="bg-white hover:bg-slate-200 grid justify-center items-center h-16 py-1 px-5 mb-5">Short By Rank<br>
                 <span class="font-light">(Descending)</span>
             </li>
-            <li class="bg-white hover:bg-slate-200 grid justify-center items-center h-16 py-1 px-5">Calculate Entire Wealth</li>
+            <li onclick="loadBillionaire('youngest')" class="bg-white hover:bg-slate-200 grid justify-center items-center h-16 py-1 px-5">Youngest Billionaires</li>
         </ul>
 
         <hr class="w-8/12 mx-auto">
 
         <ul class="text-slate-800  font-bold text-xl mt-7">
             <li onclick="loadBillionaire('getAllBillionaires')" class="bg-white hover:bg-slate-200 grid justify-center items-center h-16 py-1 px-5 mb-5">Show All Billionaires</li>
-            <li class="bg-white hover:bg-slate-200 grid justify-center items-center h-16 py-1 px-5 mb-5">Richest by industry<br>
+            <li onclick="loadBillionaire('industries/technology')" class="bg-white hover:bg-slate-200 grid justify-center items-center h-16 py-1 px-5 mb-5">Richest by industry<br>
                 <span class="font-light">(Technology)</span>
             </li>
-            <li class="bg-white hover:bg-slate-200 grid justify-center items-center h-16 py-1 px-5">Richest by states<br>
+            <li onclick="loadBillionaire('states/Texas')" class="bg-white hover:bg-slate-200 grid justify-center items-center h-16 py-1 px-5">Richest by states<br>
                 <span class="font-light">(Texas)</span>
             </li>
         </ul>
